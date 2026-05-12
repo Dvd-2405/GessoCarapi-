@@ -48,112 +48,7 @@ button {
     font-family: inherit;
 }
 
-.logo-wrapper {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.logo-nome {
-    font-size: 18px;
-    font-weight: 700;
-    color: var(--vermelho);
-    white-space: nowrap;
-}
-
-.slide {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    object-position: center;
-}
-
-.carrossel {
-    flex-shrink: 0;
-    width: 600px;
-    height: 420px;
-    border-radius: var(--radius-lg);
-    overflow: hidden;
-    background-color: var(--cinza-claro);
-    position: relative;
-    border: 1px solid #1A1A1A;
-    ;
-    margin-right: 120px;
-}
-
-.slides {
-    width: 100%;
-    height: 100%;
-}
-
-.slide {
-    display: none;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-}
-
-.slide.ativo {
-    display: block;
-}
-
-#anterior,
-#proximo {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.4);
-    color: white;
-    border: none;
-    padding: 8px 14px;
-    font-size: 20px;
-    border-radius: 4px;
-}
-
-#anterior {
-    left: 8px;
-}
-
-#proximo {
-    right: 8px;
-}
-
-.btn-primary {
-    display: inline-block;
-    background-color: var(--vermelho);
-    color: var(--branco);
-    padding: 10px 22px;
-    border-radius: var(--radius);
-    font-size: 14px;
-    font-weight: 500;
-    border: none;
-    transition: background-color 0.2s;
-}
-
-.btn-primary:hover {
-    background-color: var(--vermelho-escuro);
-}
-
-.btn-secondary {
-    display: inline-block;
-    background-color: transparent;
-    color: var(--texto-principal);
-    padding: 10px 22px;
-    border-radius: var(--radius);
-    font-size: 14px;
-    font-weight: 500;
-    border: 1px solid var(--borda);
-    transition: border-color 0.2s, color 0.2s;
-}
-
-.btn-secondary:hover {
-    border-color: var(--vermelho);
-    color: var(--vermelho);
-}
-
-
-
+/* ========== HEADER ========== */
 header {
     position: sticky;
     top: 0;
@@ -170,6 +65,19 @@ header {
 header img {
     height: 40px;
     width: auto;
+}
+
+.logo-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-nome {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--vermelho);
+    white-space: nowrap;
 }
 
 .buttons-header {
@@ -197,14 +105,74 @@ header img {
     font-size: 14px;
     font-weight: 500;
     transition: background-color 0.2s;
+    white-space: nowrap;
 }
 
 .btn-fale-conosco:hover {
     background-color: var(--vermelho-escuro);
 }
 
+.btn-fale-mobile {
+    display: none;
+}
 
+/* Hamburguer */
+.menu-hamburguer {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    padding: 4px;
+    cursor: pointer;
+}
 
+.menu-hamburguer span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background-color: var(--texto-principal);
+    border-radius: 2px;
+    transition: all 0.3s;
+}
+
+/* ========== BOTÕES ========== */
+.btn-primary {
+    display: inline-block;
+    background-color: var(--vermelho);
+    color: var(--branco);
+    padding: 10px 22px;
+    border-radius: var(--radius);
+    font-size: 14px;
+    font-weight: 500;
+    border: none;
+    transition: background-color 0.2s;
+    white-space: nowrap;
+}
+
+.btn-primary:hover {
+    background-color: var(--vermelho-escuro);
+}
+
+.btn-secondary {
+    display: inline-block;
+    background-color: transparent;
+    color: var(--texto-principal);
+    padding: 10px 22px;
+    border-radius: var(--radius);
+    font-size: 14px;
+    font-weight: 500;
+    border: 1px solid var(--borda);
+    transition: border-color 0.2s, color 0.2s;
+    white-space: nowrap;
+}
+
+.btn-secondary:hover {
+    border-color: var(--vermelho);
+    color: var(--vermelho);
+}
+
+/* ========== HERO ========== */
 .hero {
     display: flex;
     align-items: center;
@@ -249,6 +217,7 @@ header img {
     display: flex;
     gap: 12px;
     margin-bottom: 40px;
+    flex-wrap: wrap;
 }
 
 .hero-stats {
@@ -272,50 +241,53 @@ header img {
     color: var(--texto-secundario);
 }
 
-.hero-imagem {
+/* ========== CARROSSEL HERO ========== */
+.carrossel {
     flex-shrink: 0;
-    width: 420px;
-    height: 320px;
+    width: 600px;
+    height: 420px;
     border-radius: var(--radius-lg);
     overflow: hidden;
     background-color: var(--cinza-claro);
+    position: relative;
+    border: 1px solid #1A1A1A;
+    margin-right: 120px;
 }
 
-.hero-imagem img {
+.slides {
+    width: 100%;
+    height: 100%;
+}
+
+.slide {
+    display: none;
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center;
 }
 
-
-.produtos-section {
-    background-color: var(--cinza-claro);
-    padding: 64px 48px;
+.slide.ativo {
+    display: block;
 }
 
-.section-header {
-    margin-bottom: 24px;
-}
-
-.section-header h2 {
-    font-size: 26px;
-    font-weight: 700;
-    color: var(--texto-principal);
-    position: relative;
-    padding-left: 14px;
-}
-
-.section-header h2::before {
-    content: '';
+#anterior,
+#proximo {
     position: absolute;
-    left: 0;
-    top: 4px;
-    width: 4px;
-    height: 22px;
-    background-color: var(--vermelho);
-    border-radius: 2px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.4);
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    font-size: 20px;
+    border-radius: 4px;
 }
 
+#anterior { left: 8px; }
+#proximo { right: 8px; }
+
+/* ========== SEÇÃO SERVIÇOS ========== */
 .servicos-section {
     background-color: var(--vermelho);
     padding: 64px 48px;
@@ -342,29 +314,15 @@ header img {
 
 .slide-servico {
     display: none;
-    background-color: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    object-position: center;
     border-radius: var(--radius-lg);
-    padding: 48px 40px;
-    text-align: center;
-    color: var(--branco);
 }
 
 .slide-servico.ativo {
     display: block;
-}
-
-.slide-servico h3 {
-    font-size: 24px;
-    font-weight: 700;
-    margin-bottom: 12px;
-}
-
-.slide-servico p {
-    font-size: 16px;
-    opacity: 0.85;
-    max-width: 480px;
-    margin: 0 auto;
 }
 
 .svc-anterior,
@@ -386,12 +344,36 @@ header img {
     background-color: rgba(255, 255, 255, 0.35);
 }
 
-.svc-anterior {
-    left: -48px;
+.svc-anterior { left: -48px; }
+.svc-proximo { right: -48px; }
+
+/* ========== SEÇÃO PRODUTOS ========== */
+.produtos-section {
+    background-color: var(--cinza-claro);
+    padding: 64px 48px;
 }
 
-.svc-proximo {
-    right: -48px;
+.section-header {
+    margin-bottom: 24px;
+}
+
+.section-header h2 {
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--texto-principal);
+    position: relative;
+    padding-left: 14px;
+}
+
+.section-header h2::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 4px;
+    width: 4px;
+    height: 22px;
+    background-color: var(--vermelho);
+    border-radius: 2px;
 }
 
 .filtros {
@@ -428,25 +410,11 @@ header img {
     border-color: var(--vermelho);
 }
 
-.slide-servico {
-    display: none;
-    width: 100%;
-    height: 500px;
-    object-fit: cover;
-    object-position: center;
-    border-radius: var(--radius-lg);
-}
-
-.slide-servico.ativo {
-    display: block;
-}
-
 .produtos-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 20px;
 }
-
 
 .produto {
     background-color: var(--branco);
@@ -495,18 +463,18 @@ header img {
     font-size: 12px;
     font-weight: 500;
     transition: all 0.2s;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
-    display: inline-flex;
-
+    text-align: center;
 }
 
-.estoque :hover {
+.estoque:hover {
     background-color: var(--vermelho);
     color: var(--branco);
 }
 
-
+/* ========== INFO SECTION ========== */
 .info-section {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -581,7 +549,7 @@ header img {
 .enderecos ul li {
     font-size: 14px;
     color: var(--texto-secundario);
-    padding-left: 16px;
+    padding-left: 20px;
     position: relative;
 }
 
@@ -593,22 +561,78 @@ header img {
     font-size: 12px;
 }
 
+/* ========== RESPONSIVIDADE ========== */
+@media (max-width: 1024px) {
+    .carrossel {
+        width: 420px;
+        height: 320px;
+        margin-right: 0;
+    }
+
+    .hero {
+        padding: 48px 32px;
+        gap: 32px;
+    }
+
+    .svc-anterior { left: -32px; }
+    .svc-proximo { right: -32px; }
+}
 
 @media (max-width: 768px) {
+
+    /* Header */
     header {
         padding: 12px 20px;
-        flex-wrap: wrap;
-        gap: 12px;
+        position: relative;
+    }
+
+    .menu-hamburguer {
+        display: flex;
+    }
+
+    .btn-fale-desktop {
+        display: none;
     }
 
     .buttons-header {
-        gap: 16px;
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: var(--branco);
+        border-bottom: 1px solid var(--borda);
+        padding: 8px 0;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        z-index: 99;
+    }
+
+    .buttons-header.aberto {
+        display: flex;
     }
 
     .buttons-header a {
-        font-size: 13px;
+        width: 100%;
+        padding: 12px 20px;
+        font-size: 15px;
+        border-bottom: 1px solid var(--cinza-claro);
     }
 
+    .buttons-header a:last-child {
+        border-bottom: none;
+    }
+
+    .btn-fale-mobile {
+        display: block;
+        margin: 8px 20px;
+        width: calc(100% - 40px);
+        text-align: center;
+    }
+
+    /* Hero */
     .hero {
         flex-direction: column;
         padding: 40px 20px;
@@ -629,21 +653,61 @@ header img {
 
     .hero-botoes {
         justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero-botoes .btn-secondary {
+        width: 100%;
+        text-align: center;
     }
 
     .hero-stats {
         justify-content: center;
     }
 
-    .hero-imagem {
+    /* Carrossel Hero */
+    .carrossel {
         width: 100%;
-        height: 220px;
+        height: 260px;
+        margin-right: 0;
+        border: none;
     }
 
+    /* Seção Serviços */
+    .servicos-section {
+        padding: 40px 20px;
+    }
+
+    .carrossel-servicos {
+        margin: 24px auto 0;
+    }
+
+    .slide-servico {
+        height: 240px;
+    }
+
+    .svc-anterior {
+        left: 8px;
+        z-index: 10;
+    }
+
+    .svc-proximo {
+        right: 8px;
+        z-index: 10;
+    }
+
+    /* Produtos */
     .produtos-section {
         padding: 40px 20px;
     }
 
+    .produtos-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 14px;
+    }
+
+    /* Info section */
     .info-section {
         grid-template-columns: 1fr;
     }
@@ -658,5 +722,23 @@ header img {
 
     .enderecos {
         border-bottom: none;
+    }
+}
+
+@media (max-width: 420px) {
+    .logo-nome {
+        font-size: 15px;
+    }
+
+    .hero-texto h1 {
+        font-size: 24px;
+    }
+
+    .produtos-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .stat strong {
+        font-size: 22px;
     }
 }

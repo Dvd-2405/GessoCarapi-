@@ -1,4 +1,4 @@
-// Carrossel Hero
+// ========== CARROSSEL HERO ==========
 const slides = document.querySelectorAll('.slides .slide');
 let atual = 0;
 
@@ -10,11 +10,19 @@ function irPara(index) {
 
 document.getElementById('proximo').addEventListener('click', () => irPara(atual + 1));
 document.getElementById('anterior').addEventListener('click', () => irPara(atual - 1));
-
 setInterval(() => irPara(atual + 1), 4000);
 
+// Swipe hero
+let touchStartX = 0;
+const slidesEl = document.querySelector('.slides');
+slidesEl.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; });
+slidesEl.addEventListener('touchend', e => {
+    const diff = touchStartX - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 50) irPara(diff > 0 ? atual + 1 : atual - 1);
+});
 
-// Carrossel Serviços
+
+// ========== CARROSSEL SERVIÇOS ==========
 const slidesServico = document.querySelectorAll('.slides-servicos .slide-servico');
 let atualServico = 0;
 
@@ -26,38 +34,47 @@ function irParaServico(index) {
 
 document.querySelector('.svc-proximo').addEventListener('click', () => irParaServico(atualServico + 1));
 document.querySelector('.svc-anterior').addEventListener('click', () => irParaServico(atualServico - 1));
-
 setInterval(() => irParaServico(atualServico + 1), 5000);
 
-
-// Dropdowns
-const dropdowns = document.querySelectorAll('.dropdown');
-
-dropdowns.forEach(dropdown => {
-    dropdown.querySelector('.dropdown-toggle').addEventListener('click', (e) => {
-        e.stopPropagation();
-
-        dropdowns.forEach(d => {
-            if (d !== dropdown) d.classList.remove('aberto');
-        });
-
-        dropdown.classList.toggle('aberto');
-    });
+// Swipe serviços
+let touchStartXSvc = 0;
+const slidesServicosEl = document.querySelector('.slides-servicos');
+slidesServicosEl.addEventListener('touchstart', e => { touchStartXSvc = e.touches[0].clientX; });
+slidesServicosEl.addEventListener('touchend', e => {
+    const diff = touchStartXSvc - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 50) irParaServico(diff > 0 ? atualServico + 1 : atualServico - 1);
 });
 
-document.addEventListener('click', () => {
-    dropdowns.forEach(d => d.classList.remove('aberto'));
-}); 
+
+// ========== MENU HAMBURGUER ==========
+const menuBtn = document.getElementById('menuHamburguer');
+const navMenu = document.getElementById('navMenu');
+
+menuBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    navMenu.classList.toggle('aberto');
+});
+
+// Fecha o menu ao clicar em qualquer link
+navMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => navMenu.classList.remove('aberto'));
+});
+
+// Fecha ao clicar fora
+document.addEventListener('click', (e) => {
+    if (!navMenu.contains(e.target) && e.target !== menuBtn) {
+        navMenu.classList.remove('aberto');
+    }
+});
 
 
+// ========== FILTRO DE PRODUTOS ==========
 const filtros = document.querySelectorAll('.filtro');
 const produtos = document.querySelectorAll('.produto');
 
 filtros.forEach(filtro => {
     filtro.addEventListener('click', () => {
-        
         filtros.forEach(f => f.classList.remove('ativo'));
-       
         filtro.classList.add('ativo');
 
         const categoria = filtro.dataset.filtro;
@@ -70,4 +87,4 @@ filtros.forEach(filtro => {
             }
         });
     });
-});     
+});
