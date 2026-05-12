@@ -1,4 +1,4 @@
-// ========== CARROSSEL HERO ==========
+
 const slides = document.querySelectorAll('.slides .slide');
 let atual = 0;
 
@@ -12,7 +12,7 @@ document.getElementById('proximo').addEventListener('click', () => irPara(atual 
 document.getElementById('anterior').addEventListener('click', () => irPara(atual - 1));
 setInterval(() => irPara(atual + 1), 4000);
 
-// Swipe hero
+
 let touchStartX = 0;
 const slidesEl = document.querySelector('.slides');
 slidesEl.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; });
@@ -22,7 +22,7 @@ slidesEl.addEventListener('touchend', e => {
 });
 
 
-// ========== CARROSSEL SERVIÇOS ==========
+
 const slidesServico = document.querySelectorAll('.slides-servicos .slide-servico');
 let atualServico = 0;
 
@@ -36,7 +36,7 @@ document.querySelector('.svc-proximo').addEventListener('click', () => irParaSer
 document.querySelector('.svc-anterior').addEventListener('click', () => irParaServico(atualServico - 1));
 setInterval(() => irParaServico(atualServico + 1), 5000);
 
-// Swipe serviços
+
 let touchStartXSvc = 0;
 const slidesServicosEl = document.querySelector('.slides-servicos');
 slidesServicosEl.addEventListener('touchstart', e => { touchStartXSvc = e.touches[0].clientX; });
@@ -46,7 +46,7 @@ slidesServicosEl.addEventListener('touchend', e => {
 });
 
 
-// ========== MENU HAMBURGUER ==========
+
 const menuBtn = document.getElementById('menuHamburguer');
 const navMenu = document.getElementById('navMenu');
 
@@ -55,12 +55,11 @@ menuBtn.addEventListener('click', (e) => {
     navMenu.classList.toggle('aberto');
 });
 
-// Fecha o menu ao clicar em qualquer link
 navMenu.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', () => navMenu.classList.remove('aberto'));
 });
 
-// Fecha ao clicar fora
+
 document.addEventListener('click', (e) => {
     if (!navMenu.contains(e.target) && e.target !== menuBtn) {
         navMenu.classList.remove('aberto');
@@ -68,7 +67,7 @@ document.addEventListener('click', (e) => {
 });
 
 
-// ========== FILTRO DE PRODUTOS ==========
+
 const filtros = document.querySelectorAll('.filtro');
 const produtos = document.querySelectorAll('.produto');
 

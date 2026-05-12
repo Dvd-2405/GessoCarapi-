@@ -48,7 +48,7 @@ button {
     font-family: inherit;
 }
 
-/* ========== HEADER ========== */
+
 header {
     position: sticky;
     top: 0;
@@ -116,7 +116,7 @@ header img {
     display: none;
 }
 
-/* Hamburguer */
+
 .menu-hamburguer {
     display: none;
     flex-direction: column;
@@ -136,7 +136,7 @@ header img {
     transition: all 0.3s;
 }
 
-/* ========== BOTÕES ========== */
+
 .btn-primary {
     display: inline-block;
     background-color: var(--vermelho);
@@ -172,7 +172,7 @@ header img {
     color: var(--vermelho);
 }
 
-/* ========== HERO ========== */
+
 .hero {
     display: flex;
     align-items: center;
@@ -241,7 +241,7 @@ header img {
     color: var(--texto-secundario);
 }
 
-/* ========== CARROSSEL HERO ========== */
+
 .carrossel {
     flex-shrink: 0;
     width: 600px;
@@ -287,7 +287,7 @@ header img {
 #anterior { left: 8px; }
 #proximo { right: 8px; }
 
-/* ========== SEÇÃO SERVIÇOS ========== */
+
 .servicos-section {
     background-color: var(--vermelho);
     padding: 64px 48px;
@@ -347,7 +347,7 @@ header img {
 .svc-anterior { left: -48px; }
 .svc-proximo { right: -48px; }
 
-/* ========== SEÇÃO PRODUTOS ========== */
+
 .produtos-section {
     background-color: var(--cinza-claro);
     padding: 64px 48px;
@@ -474,7 +474,7 @@ header img {
     color: var(--branco);
 }
 
-/* ========== INFO SECTION ========== */
+
 .info-section {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -561,7 +561,7 @@ header img {
     font-size: 12px;
 }
 
-/* ========== RESPONSIVIDADE ========== */
+
 @media (max-width: 1024px) {
     .carrossel {
         width: 420px;
@@ -580,7 +580,7 @@ header img {
 
 @media (max-width: 768px) {
 
-    /* Header */
+
     header {
         padding: 12px 20px;
         position: relative;
@@ -632,7 +632,7 @@ header img {
         text-align: center;
     }
 
-    /* Hero */
+
     .hero {
         flex-direction: column;
         padding: 40px 20px;
@@ -666,7 +666,7 @@ header img {
         justify-content: center;
     }
 
-    /* Carrossel Hero */
+    
     .carrossel {
         width: 100%;
         height: 260px;
@@ -674,7 +674,7 @@ header img {
         border: none;
     }
 
-    /* Seção Serviços */
+
     .servicos-section {
         padding: 40px 20px;
     }
@@ -697,7 +697,7 @@ header img {
         z-index: 10;
     }
 
-    /* Produtos */
+
     .produtos-section {
         padding: 40px 20px;
     }
@@ -707,7 +707,6 @@ header img {
         gap: 14px;
     }
 
-    /* Info section */
     .info-section {
         grid-template-columns: 1fr;
     }
